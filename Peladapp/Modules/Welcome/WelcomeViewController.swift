@@ -5,4 +5,37 @@
 //  Created by Leonardo Albergaria on 15/04/24.
 //
 
-import Foundation
+import UIKit
+
+class WelcomeViewController: UIViewController {
+    
+    // MARK: - Properties
+    
+    let baseView: WelcomeView = WelcomeView()
+    
+    // MARK: - Lifecycle
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        setup()
+    }
+    
+    private func setup() {
+        view = baseView
+        baseView.delegate = self
+    }
+}
+
+//MARK: -WelcomeView Delegate
+
+extension WelcomeViewController: WelcomeViewDelegate {
+    func registerButtonClick() {
+        navigationController?.pushViewController(RegisterViewController(), animated: true)
+    }
+    
+    func loginButtonClick() {
+        navigationController?.pushViewController(LoginViewController(), animated: true)
+    }
+    
+}

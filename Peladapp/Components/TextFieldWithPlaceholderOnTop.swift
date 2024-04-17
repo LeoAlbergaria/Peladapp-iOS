@@ -27,6 +27,16 @@ final class TextFieldWithPlaceholderOnTop: UIView {
         return textField
     }()
     
+    lazy var eyeButton: UIButton = {
+        let button = UIButton()
+        button.setImage(UIImage(systemName: "eye.fill"), for: .normal)
+        button.setImage(UIImage(systemName: "eye.slash.fill"), for: .selected)
+        button.tintColor = .black
+        button.imageEdgeInsets = UIEdgeInsets(top: 0, left: -20, bottom: 0, right: 0)
+        button.addTarget(self, action: #selector(eyeButtonAction), for: .touchUpInside)
+        return button
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupComponents()
@@ -58,19 +68,32 @@ final class TextFieldWithPlaceholderOnTop: UIView {
         ])
     }
     
-    func setup(){
-        NSLayoutConstraint.activate([
-            placeholderLabel.topAnchor.constraint(equalTo: topAnchor),
-            placeholderLabel.leadingAnchor.constraint(equalTo: leadingAnchor),
-            placeholderLabel.trailingAnchor.constraint(equalTo: trailingAnchor),
-            
-            
-            textField.topAnchor.constraint(equalTo: placeholderLabel.bottomAnchor, constant: 6),
-            textField.bottomAnchor.constraint(equalTo: bottomAnchor),
-            textField.leadingAnchor.constraint(equalTo: leadingAnchor),
-            textField.trailingAnchor.constraint(equalTo: trailingAnchor),
-            
-            textField.heightAnchor.constraint(equalToConstant: 50),
-        ])
+    func setup(forType type: TextFieldType){
+        switch type {
+        case .email:
+            textField.keyboardType = .emailAddress
+            textField.textContentType = .emailAddress
+            textField.autocapitalizationType = .none
+        case .password:
+            textField.textContentType = .password
+            textField.autocapitalizationType = .none
+            textField.isSecureTextEntry = true
+            setupPasswordSecureTextButton()
+        }
     }
+    
+    func setupPasswordSecureTextButton(){
+        textField.rightView = eyeButton
+        textField.rightViewMode = .always
+    }
+    
+    @objc func eyeButtonAction(){
+        eyeButton.isSelected.toggle()
+        textField.isSecureTextEntry.toggle()
+    }
+}
+
+enum TextFieldType {
+    case email
+    case password
 }

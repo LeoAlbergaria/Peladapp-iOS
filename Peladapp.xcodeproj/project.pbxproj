@@ -17,6 +17,10 @@
 		5D5248E52BBFAFB60082FC70 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D5248E42BBFAFB60082FC70 /* LoginViewController.swift */; };
 		5D5248E72BBFB1ED0082FC70 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D5248E62BBFB1ED0082FC70 /* LoginView.swift */; };
 		5D5248F22BC9CA030082FC70 /* TextFieldWithPlaceholderOnTop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D5248F12BC9CA030082FC70 /* TextFieldWithPlaceholderOnTop.swift */; };
+		5D5248F72BCD8A2A0082FC70 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D5248F62BCD8A2A0082FC70 /* WelcomeViewController.swift */; };
+		5D5248F92BCD8A350082FC70 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D5248F82BCD8A350082FC70 /* WelcomeView.swift */; };
+		5D5248FC2BCE36BE0082FC70 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D5248FB2BCE36BE0082FC70 /* RegisterView.swift */; };
+		5D5248FE2BCE36CC0082FC70 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D5248FD2BCE36CC0082FC70 /* RegisterViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +55,10 @@
 		5D5248E42BBFAFB60082FC70 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		5D5248E62BBFB1ED0082FC70 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		5D5248F12BC9CA030082FC70 /* TextFieldWithPlaceholderOnTop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldWithPlaceholderOnTop.swift; sourceTree = "<group>"; };
+		5D5248F62BCD8A2A0082FC70 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		5D5248F82BCD8A350082FC70 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
+		5D5248FB2BCE36BE0082FC70 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
+		5D5248FD2BCE36CC0082FC70 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +140,8 @@
 		5D5248E22BBFAF950082FC70 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				5D5248F52BCD8A1D0082FC70 /* Welcome */,
+				5D5248FA2BCE36A80082FC70 /* Register */,
 				5D5248E32BBFAF9F0082FC70 /* Login */,
 			);
 			path = Modules;
@@ -152,6 +162,24 @@
 				5D5248F12BC9CA030082FC70 /* TextFieldWithPlaceholderOnTop.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		5D5248F52BCD8A1D0082FC70 /* Welcome */ = {
+			isa = PBXGroup;
+			children = (
+				5D5248F62BCD8A2A0082FC70 /* WelcomeViewController.swift */,
+				5D5248F82BCD8A350082FC70 /* WelcomeView.swift */,
+			);
+			path = Welcome;
+			sourceTree = "<group>";
+		};
+		5D5248FA2BCE36A80082FC70 /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				5D5248FD2BCE36CC0082FC70 /* RegisterViewController.swift */,
+				5D5248FB2BCE36BE0082FC70 /* RegisterView.swift */,
+			);
+			path = Register;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -284,11 +312,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D5248FE2BCE36CC0082FC70 /* RegisterViewController.swift in Sources */,
 				5D5248E52BBFAFB60082FC70 /* LoginViewController.swift in Sources */,
 				5D5248B32BBFAF090082FC70 /* AppDelegate.swift in Sources */,
 				5D5248E72BBFB1ED0082FC70 /* LoginView.swift in Sources */,
+				5D5248F72BCD8A2A0082FC70 /* WelcomeViewController.swift in Sources */,
 				5D5248B52BBFAF090082FC70 /* SceneDelegate.swift in Sources */,
+				5D5248FC2BCE36BE0082FC70 /* RegisterView.swift in Sources */,
 				5D5248F22BC9CA030082FC70 /* TextFieldWithPlaceholderOnTop.swift in Sources */,
+				5D5248F92BCD8A350082FC70 /* WelcomeView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

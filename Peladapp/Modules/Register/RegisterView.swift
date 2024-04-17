@@ -1,18 +1,18 @@
 //
-//  LoginView.swift
+//  RegisterView.swift
 //  Peladapp
 //
-//  Created by Leonardo Albergaria on 05/04/24.
+//  Created by Leonardo Albergaria on 16/04/24.
 //
 
 import UIKit
 
-class LoginView: UIView {
+class RegisterView: UIView {
     
     // MARK: - Components
     lazy var titleLabel: UILabel = {
         let label = UILabel()
-        label.text = "Login"
+        label.text = "Register"
         label.font = .boldSystemFont(ofSize: 30.0)
         label.textColor = .black
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -21,7 +21,7 @@ class LoginView: UIView {
     
     lazy var subtitleLabel: UILabel = {
         let label = UILabel()
-        label.text = "Bem-vindo de volta\nSentimos sua falta!"
+        label.text = "Estamos ansiosos pela sua primeira partida!"
         label.numberOfLines = 2
         label.font = .boldSystemFont(ofSize: 26.0)
         label.textColor = .black.withAlphaComponent(0.4)
@@ -57,19 +57,29 @@ class LoginView: UIView {
         return textField
     }()
     
+    lazy var confirmPasswordTextField: TextFieldWithPlaceholderOnTop = {
+        let textField = TextFieldWithPlaceholderOnTop()
+        textField.placeholderLabel.text = "Confirmar senha"
+        textField.textField.placeholder = "******"
+        textField.setup(forType: .password)
+        textField.translatesAutoresizingMaskIntoConstraints = false
+        return textField
+    }()
+    
     lazy var textFieldsStackView: UIStackView = {
         let view = UIStackView()
         view.spacing = 14
         view.axis = .vertical
         view.addArrangedSubview(usernameTextField)
         view.addArrangedSubview(passwordTextField)
+        view.addArrangedSubview(confirmPasswordTextField)
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
-    lazy var loginButton: UIButton = {
+    lazy var registerButton: UIButton = {
         let button = UIButton()
-        button.setTitle("Login", for: .normal)
+        button.setTitle("Register", for: .normal)
         button.backgroundColor = .black
         button.titleLabel?.font = .boldSystemFont(ofSize: 18.0)
         button.layer.cornerRadius = 4
@@ -84,7 +94,7 @@ class LoginView: UIView {
         view.addArrangedSubview(titleStackView)
         view.addArrangedSubview(textFieldsStackView)
         view.addArrangedSubview(UIView())
-        view.addArrangedSubview(loginButton)
+        view.addArrangedSubview(registerButton)
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -113,7 +123,8 @@ class LoginView: UIView {
             mainStackView.leadingAnchor.constraint(equalTo: layoutMarginsGuide.leadingAnchor),
             mainStackView.trailingAnchor.constraint(equalTo: layoutMarginsGuide.trailingAnchor),
             
-            loginButton.heightAnchor.constraint(equalToConstant: 50)
+            registerButton.heightAnchor.constraint(equalToConstant: 50)
         ])
     }
 }
+

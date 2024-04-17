@@ -1,17 +1,17 @@
 //
-//  LoginViewController.swift
+//  RegisterViewController.swift
 //  Peladapp
 //
-//  Created by Leonardo Albergaria on 05/04/24.
+//  Created by Leonardo Albergaria on 16/04/24.
 //
 
 import UIKit
 
-class LoginViewController: UIViewController {
+class RegisterViewController: UIViewController {
     
     // MARK: - Properties
     
-    let baseView: LoginView = LoginView()
+    let baseView: RegisterView = RegisterView()
     
     // MARK: - Lifecycle
     
