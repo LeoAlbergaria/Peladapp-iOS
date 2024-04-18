@@ -31,6 +31,9 @@
 		5D90D7D02BD1AA0D00C7B6FD /* JoinPeladaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D90D7CF2BD1AA0D00C7B6FD /* JoinPeladaView.swift */; };
 		5D90D7D22BD1AA1800C7B6FD /* JoinPeladaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D90D7D12BD1AA1800C7B6FD /* JoinPeladaViewController.swift */; };
 		5D90D7D42BD1AF8400C7B6FD /* TextDividerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D90D7D32BD1AF8400C7B6FD /* TextDividerView.swift */; };
+		5D90D7D72BD1BE0300C7B6FD /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D90D7D62BD1BE0300C7B6FD /* HomeViewController.swift */; };
+		5D90D7D92BD1BE0B00C7B6FD /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D90D7D82BD1BE0B00C7B6FD /* HomeView.swift */; };
+		5D90D7DC2BD1BFA100C7B6FD /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D90D7DB2BD1BFA100C7B6FD /* HomeTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +78,9 @@
 		5D90D7CF2BD1AA0D00C7B6FD /* JoinPeladaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinPeladaView.swift; sourceTree = "<group>"; };
 		5D90D7D12BD1AA1800C7B6FD /* JoinPeladaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinPeladaViewController.swift; sourceTree = "<group>"; };
 		5D90D7D32BD1AF8400C7B6FD /* TextDividerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextDividerView.swift; sourceTree = "<group>"; };
+		5D90D7D62BD1BE0300C7B6FD /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		5D90D7D82BD1BE0B00C7B6FD /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		5D90D7DB2BD1BFA100C7B6FD /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,6 +167,7 @@
 		5D5248E22BBFAF950082FC70 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				5D90D7D52BD1BD6600C7B6FD /* Home */,
 				5D90D7CE2BD1A9F000C7B6FD /* JoinPelada */,
 				5D5248F52BCD8A1D0082FC70 /* Welcome */,
 				5D5248FA2BCE36A80082FC70 /* Register */,
@@ -214,6 +221,24 @@
 				5D90D7CF2BD1AA0D00C7B6FD /* JoinPeladaView.swift */,
 			);
 			path = JoinPelada;
+			sourceTree = "<group>";
+		};
+		5D90D7D52BD1BD6600C7B6FD /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				5D90D7DA2BD1BF8A00C7B6FD /* Cells */,
+				5D90D7D62BD1BE0300C7B6FD /* HomeViewController.swift */,
+				5D90D7D82BD1BE0B00C7B6FD /* HomeView.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		5D90D7DA2BD1BF8A00C7B6FD /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				5D90D7DB2BD1BFA100C7B6FD /* HomeTableViewCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -361,6 +386,7 @@
 				5D90D7D02BD1AA0D00C7B6FD /* JoinPeladaView.swift in Sources */,
 				5D5248E52BBFAFB60082FC70 /* LoginViewController.swift in Sources */,
 				5D5248B32BBFAF090082FC70 /* AppDelegate.swift in Sources */,
+				5D90D7D72BD1BE0300C7B6FD /* HomeViewController.swift in Sources */,
 				5D5248E72BBFB1ED0082FC70 /* LoginView.swift in Sources */,
 				5D90D7CD2BD1805400C7B6FD /* RegisterViewModel.swift in Sources */,
 				5D5248F72BCD8A2A0082FC70 /* WelcomeViewController.swift in Sources */,
@@ -368,7 +394,9 @@
 				5D5248B52BBFAF090082FC70 /* SceneDelegate.swift in Sources */,
 				5D5248FC2BCE36BE0082FC70 /* RegisterView.swift in Sources */,
 				5D5248F22BC9CA030082FC70 /* TextFieldWithPlaceholderOnTop.swift in Sources */,
+				5D90D7D92BD1BE0B00C7B6FD /* HomeView.swift in Sources */,
 				5D5249232BD063140082FC70 /* LoginViewModel.swift in Sources */,
+				5D90D7DC2BD1BFA100C7B6FD /* HomeTableViewCell.swift in Sources */,
 				5D5248F92BCD8A350082FC70 /* WelcomeView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
