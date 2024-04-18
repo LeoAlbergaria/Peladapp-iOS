@@ -31,7 +31,7 @@ extension LoginViewController: LoginViewDelegate {
         viewModel?.loginUser(email: email, password: password, completion: { success in
             guard success else { return }
             
-            print("DEU BOM")
+            self.navigationController?.pushViewController(JoinPeladaViewController(), animated: true)
         })
     }
 }
