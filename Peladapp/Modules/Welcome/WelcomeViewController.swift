@@ -35,7 +35,9 @@ extension WelcomeViewController: WelcomeViewDelegate {
     }
     
     func loginButtonClick() {
-        navigationController?.pushViewController(LoginViewController(), animated: true)
+        let viewController = LoginViewController()
+        viewController.viewModel = LoginViewModel()
+        navigationController?.pushViewController(viewController, animated: true)
     }
     
 }

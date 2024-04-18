@@ -7,7 +7,13 @@
 
 import UIKit
 
+protocol LoginViewDelegate: AnyObject {
+    func loginAction(email: String, password: String)
+}
+
 class LoginView: UIView {
+    
+    weak var delegate: LoginViewDelegate?
     
     // MARK: - Components
     lazy var titleLabel: UILabel = {
@@ -73,6 +79,7 @@ class LoginView: UIView {
         button.backgroundColor = .black
         button.titleLabel?.font = .boldSystemFont(ofSize: 18.0)
         button.layer.cornerRadius = 4
+        button.addTarget(self, action: #selector(loginAction), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
@@ -115,5 +122,11 @@ class LoginView: UIView {
             
             loginButton.heightAnchor.constraint(equalToConstant: 50)
         ])
+    }
+    
+    @objc func loginAction(){
+        guard let email = usernameTextField.textField.text,
+              let password = passwordTextField.textField.text else { return }
+        delegate?.loginAction(email: email, password: password)
     }
 }

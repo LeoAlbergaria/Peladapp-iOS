@@ -12,6 +12,7 @@ class LoginViewController: UIViewController {
     // MARK: - Properties
     
     let baseView: LoginView = LoginView()
+    var viewModel: LoginViewModelProtocol?
     
     // MARK: - Lifecycle
     
@@ -19,5 +20,20 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         
         view = baseView
+        baseView.delegate = self
     }
+}
+
+// MARK: - LoginView Delegate
+
+extension LoginViewController: LoginViewDelegate {
+    func loginAction(email: String, password: String) {
+        viewModel?.loginUser(email: email, password: password, completion: { success in
+            guard success else { return }
+            
+            print("DEU BOM")
+        })
+    }
+    
+    
 }
