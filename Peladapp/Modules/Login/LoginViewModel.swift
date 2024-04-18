@@ -20,7 +20,7 @@ class LoginViewModel: LoginViewModelProtocol {
                 return
             }
             
-            print(error)
+            debugPrint(error)
             completion(false)
         }
         

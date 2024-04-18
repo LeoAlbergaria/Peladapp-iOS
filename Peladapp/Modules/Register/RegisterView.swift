@@ -7,7 +7,13 @@
 
 import UIKit
 
+protocol RegisterViewDelegate: AnyObject {
+    func registerAction(email: String, password: String)
+}
+
 class RegisterView: UIView {
+    
+    weak var delegate: RegisterViewDelegate?
     
     // MARK: - Components
     lazy var titleLabel: UILabel = {
@@ -83,6 +89,7 @@ class RegisterView: UIView {
         button.backgroundColor = .black
         button.titleLabel?.font = .boldSystemFont(ofSize: 18.0)
         button.layer.cornerRadius = 4
+        button.addTarget(self, action: #selector(registerAction), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
@@ -125,6 +132,16 @@ class RegisterView: UIView {
             
             registerButton.heightAnchor.constraint(equalToConstant: 50)
         ])
+    }
+    
+    @objc func registerAction(){
+        
+        guard let email = usernameTextField.textField.text,
+              let password = passwordTextField.textField.text,
+              let confirmPassword = confirmPasswordTextField.textField.text,
+              password == confirmPassword else { return }
+        
+        delegate?.registerAction(email: email, password: password)
     }
 }
 

@@ -27,11 +27,13 @@ class WelcomeViewController: UIViewController {
     }
 }
 
-//MARK: -WelcomeView Delegate
+//MARK: - WelcomeView Delegate
 
 extension WelcomeViewController: WelcomeViewDelegate {
     func registerButtonClick() {
-        navigationController?.pushViewController(RegisterViewController(), animated: true)
+        let viewController = RegisterViewController()
+        viewController.viewModel = RegisterViewModel()
+        navigationController?.pushViewController(viewController, animated: true)
     }
     
     func loginButtonClick() {
@@ -39,5 +41,4 @@ extension WelcomeViewController: WelcomeViewDelegate {
         viewController.viewModel = LoginViewModel()
         navigationController?.pushViewController(viewController, animated: true)
     }
-    
 }

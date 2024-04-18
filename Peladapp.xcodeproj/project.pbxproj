@@ -27,6 +27,7 @@
 		5D90D7C72BD17F2300C7B6FD /* FirebaseAnalyticsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 5D90D7C62BD17F2300C7B6FD /* FirebaseAnalyticsSwift */; };
 		5D90D7C92BD17F2300C7B6FD /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 5D90D7C82BD17F2300C7B6FD /* FirebaseAuth */; };
 		5D90D7CB2BD17F2300C7B6FD /* FirebaseAuthCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 5D90D7CA2BD17F2300C7B6FD /* FirebaseAuthCombine-Community */; };
+		5D90D7CD2BD1805400C7B6FD /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D90D7CC2BD1805400C7B6FD /* RegisterViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,7 @@
 		5D5248FD2BCE36CC0082FC70 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		5D5248FF2BD0603D0082FC70 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5D5249222BD063140082FC70 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		5D90D7CC2BD1805400C7B6FD /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -190,6 +192,7 @@
 		5D5248FA2BCE36A80082FC70 /* Register */ = {
 			isa = PBXGroup;
 			children = (
+				5D90D7CC2BD1805400C7B6FD /* RegisterViewModel.swift */,
 				5D5248FD2BCE36CC0082FC70 /* RegisterViewController.swift */,
 				5D5248FB2BCE36BE0082FC70 /* RegisterView.swift */,
 			);
@@ -340,6 +343,7 @@
 				5D5248E52BBFAFB60082FC70 /* LoginViewController.swift in Sources */,
 				5D5248B32BBFAF090082FC70 /* AppDelegate.swift in Sources */,
 				5D5248E72BBFB1ED0082FC70 /* LoginView.swift in Sources */,
+				5D90D7CD2BD1805400C7B6FD /* RegisterViewModel.swift in Sources */,
 				5D5248F72BCD8A2A0082FC70 /* WelcomeViewController.swift in Sources */,
 				5D5248B52BBFAF090082FC70 /* SceneDelegate.swift in Sources */,
 				5D5248FC2BCE36BE0082FC70 /* RegisterView.swift in Sources */,

@@ -34,6 +34,4 @@ extension LoginViewController: LoginViewDelegate {
             print("DEU BOM")
         })
     }
-    
-    
 }
