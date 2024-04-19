@@ -12,13 +12,15 @@ class HomeViewController: UIViewController {
     // MARK: - Properties
     
     let baseView: HomeView = HomeView()
+    var viewModel: HomeViewModelProtocol?
+    
     var menuItems: [UIAction] {
         return [
-            UIAction(title: "Dentro", image: UIImage(systemName: "sun.max"), handler: { (_) in
+            UIAction(title: "Dentro", image: UIImage(systemName: "checkmark"), handler: { (_) in
             }),
-            UIAction(title: "Fora", image: UIImage(systemName: "moon"), attributes: .disabled, handler: { (_) in
+            UIAction(title: "Fora", image: UIImage(systemName: "multiply"), attributes: .destructive, handler: { (_) in
             }),
-            UIAction(title: "Adicionar visitante", image: UIImage(systemName: "trash"), attributes: .destructive, handler: { (_) in
+            UIAction(title: "Adicionar visitante", image: UIImage(systemName: "person.2"), handler: { (_) in
             })
         ]
     }
@@ -48,7 +50,7 @@ class HomeViewController: UIViewController {
 
 extension HomeViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let row = indexPath.row
+//        let row = indexPath.row
     }
 }
 
@@ -60,13 +62,41 @@ extension HomeViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        guard let viewModel = viewModel else { return 0 }
+        
+        switch section {
+        case 0:
+            return viewModel.inList.count
+        case 1:
+            return viewModel.waitingList.count
+        case 2:
+            return viewModel.outList.count
+        default:
+            return 0
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let viewModel = viewModel,
+              let cell = baseView.tableView.dequeueReusableCell(withIdentifier: String(describing: HomeTableViewCell.self), for: indexPath) as? HomeTableViewCell else { return UITableViewCell() }
+        
+        let section = indexPath.section
         let row = indexPath.row
-        guard let cell = baseView.tableView.dequeueReusableCell(withIdentifier: String(describing: HomeTableViewCell.self), for: indexPath) as? HomeTableViewCell else { return UITableViewCell() }
+        var name = ""
+        
+        switch section {
+        case 0:
+            name = viewModel.inList[row]
+        case 1:
+            name = viewModel.waitingList[row]
+        case 2:
+            name = viewModel.outList[row]
+        default:
+            name = ""
+        }
+        
         cell.selectionStyle = .none
+        cell.configure(inSection: section, name: name)
         return cell
     }
     

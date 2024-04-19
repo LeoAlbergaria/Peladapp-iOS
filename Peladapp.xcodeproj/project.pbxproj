@@ -34,6 +34,8 @@
 		5D90D7D72BD1BE0300C7B6FD /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D90D7D62BD1BE0300C7B6FD /* HomeViewController.swift */; };
 		5D90D7D92BD1BE0B00C7B6FD /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D90D7D82BD1BE0B00C7B6FD /* HomeView.swift */; };
 		5D90D7DC2BD1BFA100C7B6FD /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D90D7DB2BD1BFA100C7B6FD /* HomeTableViewCell.swift */; };
+		5D90D7DE2BD2F4A900C7B6FD /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D90D7DD2BD2F4A900C7B6FD /* HomeViewModel.swift */; };
+		5D90D7E12BD3021D00C7B6FD /* TabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D90D7E02BD3021D00C7B6FD /* TabController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +83,8 @@
 		5D90D7D62BD1BE0300C7B6FD /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		5D90D7D82BD1BE0B00C7B6FD /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		5D90D7DB2BD1BFA100C7B6FD /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
+		5D90D7DD2BD2F4A900C7B6FD /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		5D90D7E02BD3021D00C7B6FD /* TabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,10 +141,7 @@
 			children = (
 				5D5248F02BC9C9DB0082FC70 /* Components */,
 				5D5248E22BBFAF950082FC70 /* Modules */,
-				5D5248B22BBFAF090082FC70 /* AppDelegate.swift */,
-				5D5248B42BBFAF090082FC70 /* SceneDelegate.swift */,
-				5D5248BB2BBFAF0B0082FC70 /* Assets.xcassets */,
-				5D5248BD2BBFAF0B0082FC70 /* LaunchScreen.storyboard */,
+				5D90D7DF2BD2FEA900C7B6FD /* Supporting */,
 				5D5248C02BBFAF0B0082FC70 /* Info.plist */,
 				5D5248FF2BD0603D0082FC70 /* GoogleService-Info.plist */,
 			);
@@ -167,6 +168,7 @@
 		5D5248E22BBFAF950082FC70 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				5D90D7E02BD3021D00C7B6FD /* TabController.swift */,
 				5D90D7D52BD1BD6600C7B6FD /* Home */,
 				5D90D7CE2BD1A9F000C7B6FD /* JoinPelada */,
 				5D5248F52BCD8A1D0082FC70 /* Welcome */,
@@ -227,6 +229,7 @@
 			isa = PBXGroup;
 			children = (
 				5D90D7DA2BD1BF8A00C7B6FD /* Cells */,
+				5D90D7DD2BD2F4A900C7B6FD /* HomeViewModel.swift */,
 				5D90D7D62BD1BE0300C7B6FD /* HomeViewController.swift */,
 				5D90D7D82BD1BE0B00C7B6FD /* HomeView.swift */,
 			);
@@ -239,6 +242,17 @@
 				5D90D7DB2BD1BFA100C7B6FD /* HomeTableViewCell.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		5D90D7DF2BD2FEA900C7B6FD /* Supporting */ = {
+			isa = PBXGroup;
+			children = (
+				5D5248B22BBFAF090082FC70 /* AppDelegate.swift */,
+				5D5248B42BBFAF090082FC70 /* SceneDelegate.swift */,
+				5D5248BB2BBFAF0B0082FC70 /* Assets.xcassets */,
+				5D5248BD2BBFAF0B0082FC70 /* LaunchScreen.storyboard */,
+			);
+			path = Supporting;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -382,6 +396,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5D5248FE2BCE36CC0082FC70 /* RegisterViewController.swift in Sources */,
+				5D90D7DE2BD2F4A900C7B6FD /* HomeViewModel.swift in Sources */,
 				5D90D7D42BD1AF8400C7B6FD /* TextDividerView.swift in Sources */,
 				5D90D7D02BD1AA0D00C7B6FD /* JoinPeladaView.swift in Sources */,
 				5D5248E52BBFAFB60082FC70 /* LoginViewController.swift in Sources */,
@@ -397,6 +412,7 @@
 				5D90D7D92BD1BE0B00C7B6FD /* HomeView.swift in Sources */,
 				5D5249232BD063140082FC70 /* LoginViewModel.swift in Sources */,
 				5D90D7DC2BD1BFA100C7B6FD /* HomeTableViewCell.swift in Sources */,
+				5D90D7E12BD3021D00C7B6FD /* TabController.swift in Sources */,
 				5D5248F92BCD8A350082FC70 /* WelcomeView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

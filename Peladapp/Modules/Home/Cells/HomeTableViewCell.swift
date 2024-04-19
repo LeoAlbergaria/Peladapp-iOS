@@ -31,7 +31,6 @@ class HomeTableViewCell: UITableViewCell {
     lazy var statusCircleView: UIView = {
         let view = UIView()
         view.layer.cornerRadius = 5
-        view.backgroundColor = .green
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -82,6 +81,18 @@ class HomeTableViewCell: UITableViewCell {
         ])
     }
     
-    func configure(){
+    func configure(inSection section: Int, name: String){
+        nameLabel.text = name
+        
+        switch section {
+        case 0:
+            statusCircleView.backgroundColor = .green
+        case 1:
+            statusCircleView.backgroundColor = .yellow
+        case 2:
+            statusCircleView.backgroundColor = .red
+        default:
+            statusCircleView.backgroundColor = .green
+        }
     }
 }

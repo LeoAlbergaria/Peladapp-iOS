@@ -75,7 +75,7 @@ class HomeView: UIView {
     
     lazy var mainStackView: UIStackView = {
         let view = UIStackView()
-        view.spacing = 44
+        view.spacing = 26
         view.axis = .vertical
         view.addArrangedSubview(titleStackView)
         view.addArrangedSubview(tableView)
