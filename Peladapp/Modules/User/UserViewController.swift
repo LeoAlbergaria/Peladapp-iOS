@@ -12,6 +12,7 @@ class UserViewController: UIViewController {
     // MARK: - Properties
     
     let baseView: UserView = UserView()
+    var viewModel: UserViewModel?
     
     // MARK: - Lifecycle
     
@@ -29,16 +30,20 @@ class UserViewController: UIViewController {
 
 extension UserViewController: UserViewDelegate {
     func logoutAction() {
-        guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
-              let sceneDelegate = windowScene.delegate as? SceneDelegate else {
-            return
-        }
-        
-        let viewController = WelcomeViewController()
-        
-        let navigationController = UINavigationController(rootViewController: viewController)
-        navigationController.navigationBar.tintColor = .black
-        
-        sceneDelegate.window?.rootViewController = navigationController
+        viewModel?.logoutUser(completion: { success in
+            guard success else { return }
+            
+            guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+                  let sceneDelegate = windowScene.delegate as? SceneDelegate else {
+                return
+            }
+            
+            let viewController = WelcomeViewController()
+            
+            let navigationController = UINavigationController(rootViewController: viewController)
+            navigationController.navigationBar.tintColor = .black
+            
+            sceneDelegate.window?.rootViewController = navigationController
+        })
     }
 }

@@ -25,6 +25,26 @@ class UserView: UIView {
         return label
     }()
     
+    lazy var subtitleLabel: UILabel = {
+        let label = UILabel()
+        label.textAlignment = .center
+        label.font = .systemFont(ofSize: 16.0)
+        label.textColor = .black
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
+    lazy var titleStackView: UIStackView = {
+        let view = UIStackView()
+        view.spacing = 8
+        view.axis = .vertical
+        view.addArrangedSubview(titleLabel)
+        view.addArrangedSubview(subtitleLabel)
+        view.alignment = .center
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
     lazy var logoutButton: UIButton = {
         let button = UIButton()
         button.setTitle("Sair", for: .normal)
@@ -40,7 +60,7 @@ class UserView: UIView {
         let view = UIStackView()
         view.spacing = 26
         view.axis = .vertical
-        view.addArrangedSubview(titleLabel)
+        view.addArrangedSubview(titleStackView)
         view.addArrangedSubview(logoutButton)
         view.translatesAutoresizingMaskIntoConstraints = false
         return view

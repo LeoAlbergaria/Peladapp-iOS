@@ -38,6 +38,8 @@
 		5D90D7E12BD3021D00C7B6FD /* TabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D90D7E02BD3021D00C7B6FD /* TabController.swift */; };
 		5D90D7E42BD6D2AE00C7B6FD /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D90D7E32BD6D2AE00C7B6FD /* UserViewController.swift */; };
 		5D90D7E62BD6D2CA00C7B6FD /* UserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D90D7E52BD6D2CA00C7B6FD /* UserView.swift */; };
+		5D90D7EA2BD70E9000C7B6FD /* UserDefaults+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D90D7E92BD70E9000C7B6FD /* UserDefaults+extensions.swift */; };
+		5D90D7EC2BD711FA00C7B6FD /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D90D7EB2BD711FA00C7B6FD /* UserViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +91,8 @@
 		5D90D7E02BD3021D00C7B6FD /* TabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabController.swift; sourceTree = "<group>"; };
 		5D90D7E32BD6D2AE00C7B6FD /* UserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
 		5D90D7E52BD6D2CA00C7B6FD /* UserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserView.swift; sourceTree = "<group>"; };
+		5D90D7E92BD70E9000C7B6FD /* UserDefaults+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+extensions.swift"; sourceTree = "<group>"; };
+		5D90D7EB2BD711FA00C7B6FD /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +147,7 @@
 		5D5248B12BBFAF090082FC70 /* Peladapp */ = {
 			isa = PBXGroup;
 			children = (
+				5D90D7E82BD70E7D00C7B6FD /* Extensions */,
 				5D5248F02BC9C9DB0082FC70 /* Components */,
 				5D5248E22BBFAF950082FC70 /* Modules */,
 				5D90D7DF2BD2FEA900C7B6FD /* Supporting */,
@@ -263,10 +268,19 @@
 		5D90D7E22BD6D28C00C7B6FD /* User */ = {
 			isa = PBXGroup;
 			children = (
+				5D90D7EB2BD711FA00C7B6FD /* UserViewModel.swift */,
 				5D90D7E32BD6D2AE00C7B6FD /* UserViewController.swift */,
 				5D90D7E52BD6D2CA00C7B6FD /* UserView.swift */,
 			);
 			path = User;
+			sourceTree = "<group>";
+		};
+		5D90D7E82BD70E7D00C7B6FD /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				5D90D7E92BD70E9000C7B6FD /* UserDefaults+extensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -419,10 +433,12 @@
 				5D90D7D72BD1BE0300C7B6FD /* HomeViewController.swift in Sources */,
 				5D5248E72BBFB1ED0082FC70 /* LoginView.swift in Sources */,
 				5D90D7CD2BD1805400C7B6FD /* RegisterViewModel.swift in Sources */,
+				5D90D7EC2BD711FA00C7B6FD /* UserViewModel.swift in Sources */,
 				5D5248F72BCD8A2A0082FC70 /* WelcomeViewController.swift in Sources */,
 				5D90D7D22BD1AA1800C7B6FD /* JoinPeladaViewController.swift in Sources */,
 				5D5248B52BBFAF090082FC70 /* SceneDelegate.swift in Sources */,
 				5D90D7E62BD6D2CA00C7B6FD /* UserView.swift in Sources */,
+				5D90D7EA2BD70E9000C7B6FD /* UserDefaults+extensions.swift in Sources */,
 				5D5248FC2BCE36BE0082FC70 /* RegisterView.swift in Sources */,
 				5D5248F22BC9CA030082FC70 /* TextFieldWithPlaceholderOnTop.swift in Sources */,
 				5D90D7D92BD1BE0B00C7B6FD /* HomeView.swift in Sources */,

@@ -21,6 +21,7 @@ class TabController: UITabBarController {
         let home = createNav(with: "Pelada", and: UIImage(systemName: "sportscourt"), vc: homeViewController)
         
         let userViewController = UserViewController()
+        userViewController.viewModel = UserViewModel()
         let user = createNav(with: "Usuário", and: UIImage(systemName: "person"), vc: userViewController)
         
         setViewControllers([home, user], animated: true)

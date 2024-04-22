@@ -14,8 +14,15 @@ protocol LoginViewModelProtocol {
 
 class LoginViewModel: LoginViewModelProtocol {
     func loginUser(email: String, password: String, completion: @escaping (Bool) -> Void){
-        Auth.auth().signIn(withEmail: email, password: password) { authResult, error in
+        let auth = Auth.auth()
+        auth.signIn(withEmail: email, password: password) { authResult, error in
             guard let error = error else {
+                guard let uid = auth.currentUser?.uid else {
+                    completion(false)
+                    return
+                }
+                
+                UserDefaults.setUID(uid)
                 completion(true)
                 return
             }
@@ -23,6 +30,5 @@ class LoginViewModel: LoginViewModelProtocol {
             debugPrint(error)
             completion(false)
         }
-        
     }
 }
