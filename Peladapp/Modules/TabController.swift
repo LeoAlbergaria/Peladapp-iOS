@@ -8,7 +8,7 @@
 import UIKit
 
 class TabController: UITabBarController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTabs()
@@ -20,7 +20,10 @@ class TabController: UITabBarController {
         homeViewController.viewModel = HomeViewModel()
         let home = createNav(with: "Pelada", and: UIImage(systemName: "sportscourt"), vc: homeViewController)
         
-        setViewControllers([home], animated: true)
+        let userViewController = UserViewController()
+        let user = createNav(with: "Usuário", and: UIImage(systemName: "person"), vc: userViewController)
+        
+        setViewControllers([home, user], animated: true)
     }
     
     private func createNav(with title: String, and image: UIImage?, vc: UIViewController) -> UINavigationController {
@@ -28,6 +31,7 @@ class TabController: UITabBarController {
         
         nav.tabBarItem.title = title
         nav.tabBarItem.image = image
+        nav.navigationBar.tintColor = .black
         
         return nav
     }
