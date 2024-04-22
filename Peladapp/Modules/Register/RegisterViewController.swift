@@ -31,8 +31,8 @@ class RegisterViewController: UIViewController {
 // MARK: - RegisterView Delegate
 
 extension RegisterViewController: RegisterViewDelegate {
-    func registerAction(email: String, password: String) {
-        viewModel?.registerUser(email: email, password: password, completion: { user in
+    func registerAction(username: String, email: String, password: String) {
+        viewModel?.registerUser(username: username, email: email, password: password, completion: { user in
             guard let user = user else { return }
             
             self.navigationController?.popViewController(animated: true)

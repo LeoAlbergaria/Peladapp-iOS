@@ -8,7 +8,7 @@
 import UIKit
 
 protocol RegisterViewDelegate: AnyObject {
-    func registerAction(email: String, password: String)
+    func registerAction(username: String, email: String, password: String)
 }
 
 class RegisterView: UIView {
@@ -47,6 +47,14 @@ class RegisterView: UIView {
     
     lazy var usernameTextField: TextFieldWithPlaceholderOnTop = {
         let textField = TextFieldWithPlaceholderOnTop()
+        textField.placeholderLabel.text = "Nome"
+        textField.textField.placeholder = "leonardo"
+        textField.translatesAutoresizingMaskIntoConstraints = false
+        return textField
+    }()
+    
+    lazy var emailTextField: TextFieldWithPlaceholderOnTop = {
+        let textField = TextFieldWithPlaceholderOnTop()
         textField.placeholderLabel.text = "E-mail"
         textField.textField.placeholder = "leonardo@gmail.com"
         textField.setup(forType: .email)
@@ -77,6 +85,7 @@ class RegisterView: UIView {
         view.spacing = 14
         view.axis = .vertical
         view.addArrangedSubview(usernameTextField)
+        view.addArrangedSubview(emailTextField)
         view.addArrangedSubview(passwordTextField)
         view.addArrangedSubview(confirmPasswordTextField)
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -136,12 +145,13 @@ class RegisterView: UIView {
     
     @objc func registerAction(){
         
-        guard let email = usernameTextField.textField.text,
+        guard let username = usernameTextField.textField.text,
+              let email = emailTextField.textField.text,
               let password = passwordTextField.textField.text,
               let confirmPassword = confirmPasswordTextField.textField.text,
               password == confirmPassword else { return }
         
-        delegate?.registerAction(email: email, password: password)
+        delegate?.registerAction(username: username,email: email, password: password)
     }
 }
 

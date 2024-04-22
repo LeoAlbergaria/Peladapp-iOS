@@ -7,7 +7,13 @@
 
 import UIKit
 
+protocol UserViewDelegate: AnyObject {
+    func logoutAction()
+}
+
 class UserView: UIView {
+    
+    weak var delegate: UserViewDelegate?
     
     // MARK: - Components
     lazy var titleLabel: UILabel = {
@@ -67,6 +73,7 @@ class UserView: UIView {
     }
     
     @objc func logoutAction(){
+        delegate?.logoutAction()
     }
 }
 

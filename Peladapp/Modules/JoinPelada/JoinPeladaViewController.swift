@@ -23,6 +23,17 @@ class JoinPeladaViewController: UIViewController {
     
     private func setup() {
         view = baseView
-//        baseView.delegate = self
+        baseView.delegate = self
+    }
+}
+
+extension JoinPeladaViewController: JoinPeladaViewDelegate {
+    func joinAction() {
+        guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+              let sceneDelegate = windowScene.delegate as? SceneDelegate else {
+            return
+        }
+        
+        sceneDelegate.window?.rootViewController = TabController()
     }
 }

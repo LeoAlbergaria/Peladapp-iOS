@@ -31,7 +31,13 @@ extension LoginViewController: LoginViewDelegate {
         viewModel?.loginUser(email: email, password: password, completion: { success in
             guard success else { return }
             
-            self.navigationController?.pushViewController(JoinPeladaViewController(), animated: true)
+            //            self.navigationController?.pushViewController(JoinPeladaViewController(), animated: true)
+            guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+                  let sceneDelegate = windowScene.delegate as? SceneDelegate else {
+                return
+            }
+            
+            sceneDelegate.window?.rootViewController = JoinPeladaViewController()
         })
     }
 }

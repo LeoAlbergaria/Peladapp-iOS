@@ -8,6 +8,7 @@
 import UIKit
 
 protocol JoinPeladaViewDelegate: AnyObject {
+    func joinAction()
 }
 
 class JoinPeladaView: UIView {
@@ -80,7 +81,7 @@ class JoinPeladaView: UIView {
         button.backgroundColor = .black
         button.titleLabel?.font = .boldSystemFont(ofSize: 18.0)
         button.layer.cornerRadius = 4
-        button.addTarget(self, action: #selector(loginAction), for: .touchUpInside)
+        button.addTarget(self, action: #selector(joinAction), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
@@ -137,10 +138,8 @@ class JoinPeladaView: UIView {
         ])
     }
     
-    @objc func loginAction(){
-//        guard let email = usernameTextField.textField.text,
-//              let password = passwordTextField.textField.text else { return }
-//        delegate?.loginAction(email: email, password: password)
+    @objc func joinAction(){
+        delegate?.joinAction()
     }
 }
 
