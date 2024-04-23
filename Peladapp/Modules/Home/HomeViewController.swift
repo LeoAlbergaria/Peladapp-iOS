@@ -17,8 +17,10 @@ class HomeViewController: UIViewController {
     var menuItems: [UIAction] {
         return [
             UIAction(title: "Dentro", image: UIImage(systemName: "checkmark"), handler: { (_) in
+                self.viewModel?.addPlayer()
             }),
             UIAction(title: "Fora", image: UIImage(systemName: "multiply"), attributes: .destructive, handler: { (_) in
+                self.viewModel?.removePlayer()
             }),
             UIAction(title: "Adicionar visitante", image: UIImage(systemName: "person.2"), handler: { (_) in
             })
@@ -41,9 +43,21 @@ class HomeViewController: UIViewController {
         view = baseView
         baseView.tableView.delegate = self
         baseView.tableView.dataSource = self
+        setupData()
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: nil, image: UIImage(systemName: "plus"), target: self, action: nil, menu: demoMenu)
     }
+    
+    private func setupData() {
+        viewModel?.loadData(completion: { success in
+            guard success else { return }
+            
+//            DispatchQueue.main.async {
+//                self.baseView.titleLabel.text = self.viewModel?.name
+//            }
+            self.baseView.tableView.reloadData()
+        })
+    } 
 }
 
 // MARK: - UITableViewDataSource

@@ -40,6 +40,8 @@
 		5D90D7E62BD6D2CA00C7B6FD /* UserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D90D7E52BD6D2CA00C7B6FD /* UserView.swift */; };
 		5D90D7EA2BD70E9000C7B6FD /* UserDefaults+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D90D7E92BD70E9000C7B6FD /* UserDefaults+extensions.swift */; };
 		5D90D7EC2BD711FA00C7B6FD /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D90D7EB2BD711FA00C7B6FD /* UserViewModel.swift */; };
+		5D90D7EF2BD721B500C7B6FD /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 5D90D7EE2BD721B500C7B6FD /* FirebaseFirestore */; };
+		5D90D7F12BD721BC00C7B6FD /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 5D90D7F02BD721BC00C7B6FD /* FirebaseFirestoreSwift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -103,7 +105,9 @@
 				5D90D7C72BD17F2300C7B6FD /* FirebaseAnalyticsSwift in Frameworks */,
 				5D90D7C92BD17F2300C7B6FD /* FirebaseAuth in Frameworks */,
 				5D90D7C52BD17F2300C7B6FD /* FirebaseAnalytics in Frameworks */,
+				5D90D7EF2BD721B500C7B6FD /* FirebaseFirestore in Frameworks */,
 				5D90D7CB2BD17F2300C7B6FD /* FirebaseAuthCombine-Community in Frameworks */,
+				5D90D7F12BD721BC00C7B6FD /* FirebaseFirestoreSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -131,6 +135,7 @@
 				5D5248C82BBFAF0B0082FC70 /* PeladappTests */,
 				5D5248D22BBFAF0B0082FC70 /* PeladappUITests */,
 				5D5248B02BBFAF090082FC70 /* Products */,
+				5D90D7ED2BD721B500C7B6FD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -178,12 +183,12 @@
 			isa = PBXGroup;
 			children = (
 				5D90D7E02BD3021D00C7B6FD /* TabController.swift */,
-				5D90D7E22BD6D28C00C7B6FD /* User */,
-				5D90D7D52BD1BD6600C7B6FD /* Home */,
-				5D90D7CE2BD1A9F000C7B6FD /* JoinPelada */,
 				5D5248F52BCD8A1D0082FC70 /* Welcome */,
-				5D5248FA2BCE36A80082FC70 /* Register */,
 				5D5248E32BBFAF9F0082FC70 /* Login */,
+				5D5248FA2BCE36A80082FC70 /* Register */,
+				5D90D7CE2BD1A9F000C7B6FD /* JoinPelada */,
+				5D90D7D52BD1BD6600C7B6FD /* Home */,
+				5D90D7E22BD6D28C00C7B6FD /* User */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -283,6 +288,13 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		5D90D7ED2BD721B500C7B6FD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -304,6 +316,8 @@
 				5D90D7C62BD17F2300C7B6FD /* FirebaseAnalyticsSwift */,
 				5D90D7C82BD17F2300C7B6FD /* FirebaseAuth */,
 				5D90D7CA2BD17F2300C7B6FD /* FirebaseAuthCombine-Community */,
+				5D90D7EE2BD721B500C7B6FD /* FirebaseFirestore */,
+				5D90D7F02BD721BC00C7B6FD /* FirebaseFirestoreSwift */,
 			);
 			productName = Peladapp;
 			productReference = 5D5248AF2BBFAF090082FC70 /* Peladapp.app */;
@@ -814,6 +828,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 5D90D7C32BD17F2300C7B6FD /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = "FirebaseAuthCombine-Community";
+		};
+		5D90D7EE2BD721B500C7B6FD /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5D90D7C32BD17F2300C7B6FD /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		5D90D7F02BD721BC00C7B6FD /* FirebaseFirestoreSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5D90D7C32BD17F2300C7B6FD /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestoreSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
