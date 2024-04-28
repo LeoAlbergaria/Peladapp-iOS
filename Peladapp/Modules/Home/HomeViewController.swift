@@ -49,14 +49,19 @@ class HomeViewController: UIViewController {
     }
     
     private func setupData() {
-        viewModel?.loadData(completion: { success in
-            guard success else { return }
-            
-//            DispatchQueue.main.async {
-//                self.baseView.titleLabel.text = self.viewModel?.name
-//            }
-            self.baseView.tableView.reloadData()
-        })
+        
+        viewModel?.getPelada(withId: "KQkGb6AxqxqZKDQWo51S") { [weak self] error in
+            if let error = error {
+                print(error)
+            } else {
+                guard let pelada = self?.viewModel?.pelada else { return }
+                self?.baseView.configure(title: pelada.name, date: Date())
+                
+                self?.viewModel?.observeFirstMatchForPelada(withId: "KQkGb6AxqxqZKDQWo51S") { [weak self] error in
+                    self?.baseView.tableView.reloadData()
+                }
+            }
+        }
     } 
 }
 

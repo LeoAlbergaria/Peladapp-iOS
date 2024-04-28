@@ -12,7 +12,6 @@ class HomeView: UIView {
     // MARK: - Components
     lazy var titleLabel: UILabel = {
         let label = UILabel()
-        label.text = "Society Bochecha"
         label.font = .boldSystemFont(ofSize: 30.0)
         label.textColor = .black
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -21,7 +20,6 @@ class HomeView: UIView {
     
     lazy var subtitleLabel: UILabel = {
         let label = UILabel()
-        label.text = "Quinta - 20:30"
         label.font = .boldSystemFont(ofSize: 26.0)
         label.textColor = .black.withAlphaComponent(0.4)
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -109,10 +107,13 @@ class HomeView: UIView {
         ])
     }
     
-    @objc func loginAction(){
-//        guard let email = usernameTextField.textField.text,
-//              let password = passwordTextField.textField.text else { return }
-//        delegate?.loginAction(email: email, password: password)
+    func configure(title: String, date: Date){
+        titleLabel.text = title
+        
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "EEEE - HH:mm"
+        subtitleLabel.text = dateFormatter.string(from: date)
     }
 }
 

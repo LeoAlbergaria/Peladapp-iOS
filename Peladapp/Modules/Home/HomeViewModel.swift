@@ -7,60 +7,58 @@
 
 import Foundation
 import FirebaseFirestore
+import FirebaseFirestoreSwift
 
 protocol HomeViewModelProtocol {
-    func loadData(completion: @escaping (Bool) -> Void)
     func addPlayer()
     func removePlayer()
+    func getPelada(withId peladaId: String, completion: @escaping (Error?) -> Void)
+    func observeFirstMatchForPelada(withId peladaId: String, completion: @escaping (Error?) -> Void)
     
     var inList: [String] { get }
     var waitingList: [String] { get }
     var outList: [String] { get }
+    var pelada: Pelada? { get }
 }
 
 class HomeViewModel: HomeViewModelProtocol {
-    let database = Firestore.firestore()
+    private let service = HomeService()
     
-    let name: String = ""
+    private var match: Match?
+    
     var inList: [String] = []
     let waitingList: [String] = []
     var outList: [String] = []
+    var pelada: Pelada?
     
-    func loadData(completion: @escaping (Bool) -> Void) {
-        
-        let colRef = database.collection("Peladas/KQkGb6AxqxqZKDQWo51S/matches")
-        
-        let query = colRef.limit(to: 1)
-        
-        query.getDocuments { snapshot , error in
-            guard let doc = snapshot?.documents.first else {
-                completion(false)
-                return
+    func getPelada(withId peladaId: String, completion: @escaping (Error?) -> Void) {
+        service.getPelada(withId: peladaId) { [weak self] pelada, error in
+            if let error = error {
+                completion(error)
+            } else {
+                self?.pelada = pelada
+                completion(nil)
             }
+        }
+    }
     
-            let docRef = doc.reference
-            
-            doc.reference.addSnapshotListener { documentSnapshot , error in
-                guard let data = documentSnapshot?.data() else {
-                    completion(false)
-                    return
+    func observeFirstMatchForPelada(withId peladaId: String, completion: @escaping (Error?) -> Void){
+        service.observeFirstMatchForPelada(withId: peladaId) { [weak self] match, error in
+            if let error = error {
+                completion(error)
+            } else {
+                if let match = match {
+                    self?.match = match
+                    self?.inList = match.inPlayersList
+                    self?.outList = match.outPlayersList
                 }
-                
-                guard let inList = data["inList"] as? [String],
-                      let outList = data["outList"] as? [String] else {
-                    completion(false)
-                    return
-                }
-                
-                self.inList = inList
-                self.outList = outList
-                completion(true)
+                completion(nil)
             }
         }
     }
     
     func addPlayer(){
-        let colRef = database.collection("Peladas/KQkGb6AxqxqZKDQWo51S/matches")
+        let colRef = Firestore.firestore().collection("Peladas/KQkGb6AxqxqZKDQWo51S/matches")
         
         let query = colRef.limit(to: 1)
         
@@ -69,21 +67,21 @@ class HomeViewModel: HomeViewModelProtocol {
                 return
             }
             
-            guard var inList = doc["inList"] as? [String],
-                  var outList = doc["outList"] as? [String],
+            guard var inList = doc["inPlayersList"] as? [String],
+                  var outList = doc["outPlayersList"] as? [String],
                   let user = UserDefaults.getUID() else { return }
             
             if !inList.contains(user) {
                 outList.removeAll(where: { $0 == user} )
                 inList.append(user)
-                doc.reference.updateData(["inList": inList,
-                                          "outList": outList])
+                doc.reference.updateData(["inPlayersList": inList,
+                                          "outPlayersList": outList])
             }
         }
     }
     
     func removePlayer(){
-        let colRef = database.collection("Peladas/KQkGb6AxqxqZKDQWo51S/matches")
+        let colRef = Firestore.firestore().collection("Peladas/KQkGb6AxqxqZKDQWo51S/matches")
         
         let query = colRef.limit(to: 1)
         
@@ -92,15 +90,15 @@ class HomeViewModel: HomeViewModelProtocol {
                 return
             }
             
-            guard var inList = doc["inList"] as? [String],
-                  var outList = doc["outList"] as? [String],
+            guard var inList = doc["inPlayersList"] as? [String],
+                  var outList = doc["outPlayersList"] as? [String],
                   let user = UserDefaults.getUID() else { return }
             
             if !outList.contains(user) {
                 inList.removeAll(where: { $0 == user} )
                 outList.append(user)
-                doc.reference.updateData(["inList": inList,
-                                          "outList": outList])
+                doc.reference.updateData(["inPlayersList": inList,
+                                          "outPlayersList": outList])
             }
         }
     }

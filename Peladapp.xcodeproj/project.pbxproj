@@ -42,6 +42,8 @@
 		5D90D7EC2BD711FA00C7B6FD /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D90D7EB2BD711FA00C7B6FD /* UserViewModel.swift */; };
 		5D90D7EF2BD721B500C7B6FD /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 5D90D7EE2BD721B500C7B6FD /* FirebaseFirestore */; };
 		5D90D7F12BD721BC00C7B6FD /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 5D90D7F02BD721BC00C7B6FD /* FirebaseFirestoreSwift */; };
+		5D90D7F32BD8505000C7B6FD /* PeladaModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D90D7F22BD8505000C7B6FD /* PeladaModel.swift */; };
+		5D90D7F52BD9FFC000C7B6FD /* HomeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D90D7F42BD9FFC000C7B6FD /* HomeService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,6 +97,8 @@
 		5D90D7E52BD6D2CA00C7B6FD /* UserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserView.swift; sourceTree = "<group>"; };
 		5D90D7E92BD70E9000C7B6FD /* UserDefaults+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+extensions.swift"; sourceTree = "<group>"; };
 		5D90D7EB2BD711FA00C7B6FD /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
+		5D90D7F22BD8505000C7B6FD /* PeladaModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeladaModel.swift; sourceTree = "<group>"; };
+		5D90D7F42BD9FFC000C7B6FD /* HomeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,9 +156,9 @@
 		5D5248B12BBFAF090082FC70 /* Peladapp */ = {
 			isa = PBXGroup;
 			children = (
-				5D90D7E82BD70E7D00C7B6FD /* Extensions */,
 				5D5248F02BC9C9DB0082FC70 /* Components */,
 				5D5248E22BBFAF950082FC70 /* Modules */,
+				5D90D7E82BD70E7D00C7B6FD /* Extensions */,
 				5D90D7DF2BD2FEA900C7B6FD /* Supporting */,
 				5D5248C02BBFAF0B0082FC70 /* Info.plist */,
 				5D5248FF2BD0603D0082FC70 /* GoogleService-Info.plist */,
@@ -247,6 +251,8 @@
 				5D90D7DD2BD2F4A900C7B6FD /* HomeViewModel.swift */,
 				5D90D7D62BD1BE0300C7B6FD /* HomeViewController.swift */,
 				5D90D7D82BD1BE0B00C7B6FD /* HomeView.swift */,
+				5D90D7F22BD8505000C7B6FD /* PeladaModel.swift */,
+				5D90D7F42BD9FFC000C7B6FD /* HomeService.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -451,12 +457,14 @@
 				5D5248F72BCD8A2A0082FC70 /* WelcomeViewController.swift in Sources */,
 				5D90D7D22BD1AA1800C7B6FD /* JoinPeladaViewController.swift in Sources */,
 				5D5248B52BBFAF090082FC70 /* SceneDelegate.swift in Sources */,
+				5D90D7F52BD9FFC000C7B6FD /* HomeService.swift in Sources */,
 				5D90D7E62BD6D2CA00C7B6FD /* UserView.swift in Sources */,
 				5D90D7EA2BD70E9000C7B6FD /* UserDefaults+extensions.swift in Sources */,
 				5D5248FC2BCE36BE0082FC70 /* RegisterView.swift in Sources */,
 				5D5248F22BC9CA030082FC70 /* TextFieldWithPlaceholderOnTop.swift in Sources */,
 				5D90D7D92BD1BE0B00C7B6FD /* HomeView.swift in Sources */,
 				5D5249232BD063140082FC70 /* LoginViewModel.swift in Sources */,
+				5D90D7F32BD8505000C7B6FD /* PeladaModel.swift in Sources */,
 				5D90D7DC2BD1BFA100C7B6FD /* HomeTableViewCell.swift in Sources */,
 				5D90D7E12BD3021D00C7B6FD /* TabController.swift in Sources */,
 				5D5248F92BCD8A350082FC70 /* WelcomeView.swift in Sources */,
